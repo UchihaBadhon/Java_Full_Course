@@ -1,0 +1,27 @@
+package org.example;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+       
+        double rslt;
+        rslt = Math.PI;
+        System.out.println(rslt); // 3.141592653589793
+        rslt = Math.pow( 2, 3);
+        System.out.println("Power: " +rslt); // Power: 8.0
+        rslt = Math.round(4.3);
+        System.out.println("Round off: " +rslt);// Round off: 4.0
+        
+        rslt = Math.ceil(3.67);
+        System.out.println("Ceil: " +rslt); // Ceil: 4.0
+        
+        rslt = Math.floor(3.67);
+        System.out.println("floor: " +rslt);//floor: 3.0
+        
+        rslt = Math.max(3, 67);
+        System.out.println("Max : " +rslt);// Max : 67.0
+        
+        rslt = Math.min(3, 67);
+        System.out.println("Minimum: " +rslt);// Minimum: 3.0
+    }
+}
