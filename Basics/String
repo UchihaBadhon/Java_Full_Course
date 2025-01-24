@@ -15,6 +15,14 @@ public class Main {
        str = str.trim(); // to cutt all spaces
        str = str.replace("o", "a"); // hala amiga
         System.out.println(str);
-               
+
+// Substring is a method to extract a portion from string
+// Syntex:  String_name.substring( start_index, end_index );
+
+	String str = "HelloBold@gmail.com";
+		String str2 = str.substring( 0, 9 );
+		
+		System.out.println(str2); // HelloBold
+
     }
 }
