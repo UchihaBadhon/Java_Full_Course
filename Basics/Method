@@ -1,0 +1,28 @@
+
+
+// overloaded method means- same method name but different parameters
+
+public class Main
+{
+	public static void main(String[] args) {
+		value( 1, 2 );
+		value( 1, 2, 3 );
+	    value( 1, 2, 5.6 );
+	    
+	}
+	
+	static void value( int a, int b ){
+	    System.out.println(a + " " +b); // 1 2
+	   
+	}
+	
+	static void value( int a, int b, int c ){
+	    System.out.println(a + " " +b + " " +c ); // 1 2 3
+	   
+	}
+	
+	static void value( int a, int b, double c ){
+	    System.out.println(a + " " +b + " " +c ); // 1 2 5.6
+	   
+	}
+}
