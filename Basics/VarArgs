@@ -1,0 +1,30 @@
+
+// vararg = allow a method to accept any no. of arguments
+//          without creating overloaded methods.
+//          It works kind of array
+
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	   
+	   int res = add(1, 2, 3, 4);
+	   System.out.println( res ); // 10
+	   
+	   res = add(1, 2, 3, 4, 5);
+	   System.out.println( res ); // 15
+	
+	}
+	
+	static int add( int...number ){
+	    
+	    int sum = 0;
+	    
+	    for( int i : number ){
+	        sum+= i;
+	    }
+	    return sum;
+	}
+}
