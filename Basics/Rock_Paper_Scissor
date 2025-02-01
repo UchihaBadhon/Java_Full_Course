@@ -1,0 +1,52 @@
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+		// a string input
+		String[] rslt = {"rock", "scissor", "paper"};
+		
+        Random random = new Random();
+        System.out.println("******Welcome to the game***********");
+        
+        do{
+        System.out.println("Chose: ");
+        String guess;
+        Scanner in = new Scanner( System.in );
+        guess = in.nextLine();
+        
+        
+        String ans = rslt[random.nextInt(0, 3)];
+        
+        if( guess.equals(ans) ){
+            System.out.println("No one wins");
+        }
+        else if( (guess.equals("rock") && ans.equals("scissor")) ||
+                 (guess.equals("scissor") && ans.equals("paper")) ||  
+                 (guess.equals("paper") && ans.equals("rock"))
+                )
+                {
+                    System.out.println("You won!! " +guess + "System: "+ans);
+                }
+        
+        else{
+            System.out.println("You lost!! "+ guess + "System: "+ans);
+        }
+    
+		System.out.println("You want to play again?? ");
+		System.out.println("1. yes");
+        System.out.println("2. No ");
+        int choice;
+        choice = in.nextInt();
+        in.nextLine();
+        if( choice == 2 ){
+            break;
+        }
+        
+        }while(true );
+		
+	}
+}
