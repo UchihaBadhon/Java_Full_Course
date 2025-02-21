@@ -1,0 +1,45 @@
+package org.example;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+
+public class Main {
+    public static void main(String[] args) {
+       
+        String path = "E:\\Badhon\\Java_code\\test.txt";
+      
+//write 
+        try(FileWriter file = new FileWriter(path)){
+            file.write("Holaaa! Amigos");
+            System.out.println("Written successfully");
+        }
+        catch(FileNotFoundException f){
+            System.out.println("File is not found");
+            
+        }
+        catch(IOException io){
+            System.out.println("File could not be written");
+        }
+        
+        //File Read
+        //BufferedRead+FileReader = Best for read text line by line from file
+        try(BufferedReader reader = new BufferedReader( new FileReader(path))){
+            String line;
+            while( (line = reader.readLine()) != null )
+            System.out.println(line);
+        }
+        catch(FileNotFoundException f){
+            System.out.println("File is not found");
+            
+        }
+        catch(IOException io){
+            System.out.println("File could not be read");
+        }
+        
+}
+}
