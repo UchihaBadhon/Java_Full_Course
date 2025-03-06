@@ -1,0 +1,45 @@
+package org.example;
+
+
+import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
+
+// Timer = Class that schedules task at specific times or periodically
+// useful for sending notifications, scheduled updates, repititive task
+
+//TimerTask = Represents the task that will be executed by the timer
+// You will extend the timerTask class to define your task
+// Create a subclass of timertask and @override run method
+public class Main {
+    public static void main(String[] args) {
+       
+        Timer timer = new Timer();
+        
+        //Using anonymous class
+        TimerTask task = new TimerTask(){
+            int count = 3;
+            
+            @Override
+            public void run(){
+                System.out.println("Hello Man!!");
+                count--;
+                
+                if( count <= 0 ){
+                    System.out.println("TImes upppp!");
+                    timer.cancel();
+                }
+            }
+        };
+        
+        timer.schedule(task, 2000, 1000); // (TimerTask, Starting delay in ms, delay time between task) 
+}
+}
+
+/*
+output:
+Hello Man!!
+Hello Man!!
+Hello Man!!
+TImes upppp!
+*/
