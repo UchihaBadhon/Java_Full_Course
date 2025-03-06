@@ -1,0 +1,30 @@
+package org.example;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+
+public class Main {
+    public static void main(String[] args) {
+       
+        //local Date
+        LocalDate date = LocalDate.now();
+        System.out.println(date); // 2025-03-07
+        
+        //local time
+        LocalTime time = LocalTime.now();
+        System.out.println(time); // 00:13:09.438744700
+        
+        //local date & time
+        LocalDateTime datetime = LocalDateTime.now();
+        System.out.println(datetime); // 2025-03-07T00:13:09.439950300
+        
+        //Custom format
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        String nwdatetime = datetime.format(formatter);
+        System.out.println(nwdatetime); //2025-03-06 17:16
+}
+}
