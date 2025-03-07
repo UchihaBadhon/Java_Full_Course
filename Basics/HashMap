@@ -1,0 +1,46 @@
+package org.example;
+
+
+import java.util.HashMap;
+import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
+
+// Hashmap = A data structure that stores key-value pairs
+// keys are unique, but values can be duplicated 
+//does not maintain any order, but is memore efficient
+// Syntax: HashMap<key, value> 
+// 
+public class Main {
+    public static void main(String[] args) {
+       HashMap<String, Integer> map = new HashMap<>();
+       
+       // TO add values and key 
+       map.put("Mahidul", 1);
+       map.put("Sherlock", 5);
+       map.put("Avery", 3);
+       
+       System.out.println(map); // {Sherlock=5, Mahidul=1, Avery=3}
+       
+       map.remove("Avery");
+       System.out.println(map); // {Sherlock=5, Mahidul=1}
+        System.out.println(map.get("Mahidul")); // 1
+        System.out.println(map.containsKey("Sherlock")); // true (Return boolean value)
+        System.out.println(map.containsValue(5)); // true (Return boolean value)
+        System.out.println(map.size()); // 2
+      
+        map.put("Sevy", 90);
+       //Using for each loop
+       for( String key : map.keySet() ){
+           System.out.println( key + " : " +map.get(key));
+       }
+       /*
+       Output:
+       Sherlock : 5
+       Sevy : 90
+       Mahidul : 1
+       */
+
+       
+}
+}
