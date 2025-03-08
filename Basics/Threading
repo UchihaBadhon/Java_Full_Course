@@ -1,0 +1,50 @@
+package org.example;
+
+
+import java.util.HashMap;
+import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class Main {
+    public static void main(String[] args) {
+       
+       Scanner inp = new Scanner(System.in);
+       Mythreads mythread = new Mythreads();
+       Thread thread = new Thread(mythread);
+       thread.setDaemon(true);
+       thread.start();
+        System.out.println("You got 5seconds to move ur ass and tell your name");
+        System.out.print("Tell your name: ");
+       String name = inp.nextLine();
+       
+        System.out.println("Hello " +name);
+
+       inp.close();
+}
+}
+
+
+//new class
+package org.example;
+
+
+public class Mythreads implements Runnable {
+    
+    @Override
+    public void run(){
+        
+        for( int i = 1; i <= 10; i++ ){
+            try{
+                Thread.sleep(1000);
+            }
+            catch( InterruptedException e){
+                System.out.println("Sorry! You got interrupted!!");
+            }
+            if( i == 10 ){
+                System.out.println("Times up!!!");
+                System.exit(0);
+            }
+        }
+    }
+}
